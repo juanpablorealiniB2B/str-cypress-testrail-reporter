@@ -1,0 +1,44 @@
+{
+  "name": "str-cypress-testrail-reporter",
+  "version": "1.3.4",
+  "description": "A Testrail reporter for cypress including TestRail API basic library, supporting one test run per project",
+  "main": "index.js",
+  "private": false,
+  "keywords": [
+    "cypress",
+    "testrail",
+    "reporter"
+  ],
+  "author": {
+    "name": "Juan Pablo Realini",
+    "email": "jprealini@gmail.com"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jprealini/str-cypress-testrail-reporter"
+  },
+  "bugs": {
+    "url": ""
+  },
+  "scripts": {
+    "tsc": "tsc",
+    "clean": "rimraf dist",
+    "build": "npm run clean && npm run tsc"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "btoa": "^1.1.2",
+    "chalk": "^2.4.1",
+    "mocha": "^5.2.0"
+  },
+  "devDependencies": {
+    "@types/chai": "^3.4.34",
+    "@types/mocha": "^2.2.36",
+    "@types/node": "^6.14.2",
+    "chai": "^3.5.0",
+    "rimraf": "^2.6.3",
+    "typescript": "^2.9.2"
+  }
+}
