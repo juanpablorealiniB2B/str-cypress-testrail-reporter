@@ -1,4 +1,4 @@
-# Singe TestRun TestRail Reporter for Cypress
+# Single TestRun TestRail Reporter for Cypress
 
 [![version](https://img.shields.io/npm/v/cypress-testrail-reporter.svg)](https://www.npmjs.com/package/cypress-testrail-reporter)
 [![downloads](https://img.shields.io/npm/dt/cypress-testrail-reporter.svg)](https://www.npmjs.com/package/cypress-testrail-reporter)
@@ -59,7 +59,7 @@ it("Can authenticate a valid userC123", ...
 
 This modified version of the salty-cypress-testrail-reporter doesn't include the option to create a test run from Cypress. This implies that the TestRun must already exist.
 
-Also, the issue regarding the last spec testd not being reported to TestRail has been fixed.
+Also, the issue regarding the last spec test not being reported to TestRail has been fixed.
 
 ## TestRail Settings
 
