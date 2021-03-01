@@ -1,4 +1,4 @@
-# TestRail Reporter for Cypress
+# Singe TestRun TestRail Reporter for Cypress
 
 [![version](https://img.shields.io/npm/v/cypress-testrail-reporter.svg)](https://www.npmjs.com/package/cypress-testrail-reporter)
 [![downloads](https://img.shields.io/npm/dt/cypress-testrail-reporter.svg)](https://www.npmjs.com/package/cypress-testrail-reporter)
