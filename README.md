@@ -73,7 +73,7 @@ You can read the whole TestRail documentation [here](http://docs.gurock.com/).
 
 ## Author
 
-Author: Juan Pablo Realini - [github](https://github.com/jprealini)
+Author: Juan Pablo Realini - [github](https://github.com/juanpablorealiniB2B)
 
 ## License
 
