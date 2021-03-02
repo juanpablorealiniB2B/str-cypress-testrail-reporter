@@ -36,8 +36,9 @@
   "devDependencies": {
     "@types/chai": "^3.4.34",
     "@types/mocha": "^2.2.36",
-    "@types/node": "^6.14.2",
+    "@types/node": "^6.14.13",
     "chai": "^3.5.0",
+    "deasync": "^0.1.21",
     "rimraf": "^2.6.3",
     "typescript": "^2.9.2"
   }
