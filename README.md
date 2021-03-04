@@ -13,7 +13,7 @@ The original package by Spencer is awesome!
 ## Install
 
 ```shell
-$ npm install str-cypress-testrail-reporter --save-dev
+$ npm install str-cypress-testrail-reporter --D
 ```
 
 ## Usage
@@ -28,7 +28,8 @@ Add reporter to your `cypress.json`:
     "domain": "yourdomain.testrail.com",
     "username": "username",
     "password": "password" or "api key",
-    "projectId": projectIdNumber
+    "projectId": projectIdNumber,
+    "runId": runId
   }
 }
 ```
@@ -54,6 +55,14 @@ it("Can authenticate a valid userC123", ...
 **password**: _string_ password or the API key for the aforementioned user.
 
 **projectId**: _number_ project with which the tests are associated.
+
+**runId**: _number_ test run with which the tests are associated.
+
+## Usage from Cypress
+
+You need to pass the reporter options from the "cypress run" command line options, like:
+
+**npx cypress run --reporter-options domain="domain",username="username",password="password or api key",projectId=0,runId=0**
 
 # Functionality Update 03/01/2021 - Juan P. Realini
 
