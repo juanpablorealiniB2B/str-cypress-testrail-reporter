@@ -9,9 +9,6 @@ var TestRail = /** @class */ (function () {
 
     TestRail.prototype.publishResults = function (results,) {
         var _this = this;
-        console.log("RUNID")
-        console.log(_this.options.runId)
-
         return axios({
             method: 'post',
             url: _this.base + "/add_results_for_cases/" + _this.options.runId,

@@ -79,8 +79,6 @@ var CypressTestRailReporter = /** @class */ (function (_super) {
                 console.log('\n', " - Results are published to " + chalk.magenta("https://" + _this.options.domain + "/index.php?/runs/view/" + _this.options.runId), '\n');
                 done = true;
             })
-                .catch(function (error) { return console.error(error); });
-
             while (!done)
                 require('deasync').sleep(500)
         });
@@ -89,10 +87,10 @@ var CypressTestRailReporter = /** @class */ (function (_super) {
 
     CypressTestRailReporter.prototype.validate = function (options, name) {
         if (options == null) {
-            throw new Error('Missing reporterOptions in cypress.json');
+            throw new Error('Missing reporterOptions');
         }
         if (options[name] == null) {
-            throw new Error("Missing " + name + " value. Please update reporterOptions in cypress.json");
+            throw new Error("Missing " + name + " value. Please provide the right value for the " + name + " argument when executing cypress");
         }
     };
     return CypressTestRailReporter;
