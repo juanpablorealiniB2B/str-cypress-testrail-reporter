@@ -25,18 +25,16 @@ var CypressTestRailReporter = /** @class */ (function (_super) {
         _this.results = [];
         var reporterOptions = options.reporterOptions;
         _this.testRail = new testrail_1.TestRail(reporterOptions);
-        _this.isRun = false;
+        _this.isRun = false;        
         var done = false;
         _this.validate(reporterOptions, 'domain');
         _this.validate(reporterOptions, 'username');
         _this.validate(reporterOptions, 'password');
         _this.validate(reporterOptions, 'projectId');
+        _this.validate(reporterOptions, 'runId');
 
         runner.on('start', function () {
-            console.log("Running Test Case...");
-            _this.testRail.getTestRunId().then(function (res) {
-                _this.runId = res;
-            });
+            console.log("Running Test Case...");           
         });
 
         runner.on('pass', function (test) {
@@ -78,7 +76,7 @@ var CypressTestRailReporter = /** @class */ (function (_super) {
             }
             _this.testRail.publishResults(_this.results).then((response) => {
                 console.log('\n', chalk.magenta.underline.bold('(TestRail Reporter)'));
-                console.log('\n', " - Results are published to " + chalk.magenta("https://" + _this.options.domain + "/index.php?/runs/view/" + _this.runId), '\n');
+                console.log('\n', " - Results are published to " + chalk.magenta("https://" + _this.options.domain + "/index.php?/runs/view/" + _this.options.runId), '\n');
                 done = true;
             })
                 .catch(function (error) { return console.error(error); });

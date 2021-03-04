@@ -21,12 +21,10 @@ export class CypressTestRailReporter extends reporters.Spec {
     this.validate(reporterOptions, 'username');
     this.validate(reporterOptions, 'password');
     this.validate(reporterOptions, 'projectId');
+    this.validate(reporterOptions, 'runId');
 
     runner.on('start', () => {
-      console.log("Running Test Case...")
-      this.testRail.getTestRunId().then(function (res) {
-        this.runId = res;
-      });
+      console.log("Running Test Case...")      
     });
 
     runner.on('pass', test => {

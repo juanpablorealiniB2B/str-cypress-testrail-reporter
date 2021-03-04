@@ -7,47 +7,23 @@ var TestRail = /** @class */ (function () {
         this.base = "https://" + options.domain + "/index.php?/api/v2";
     }
 
-    TestRail.prototype.getTestRunId = function () {
+    TestRail.prototype.publishResults = function (results,) {
         var _this = this;
-        return axios({
-            method: 'get',
-            url: this.base + "/get_runs/" + this.options.projectId,
-            headers: { 'Content-Type': 'application/json' },
-            auth: {
-                username: this.options.username,
-                password: this.options.password,
-            }
-        }).then(function (response) {
-            return response.data[0].id;
-        }).catch(error => console.error(error));
-    };   
+        console.log("RUNID")
+        console.log(_this.options.runId)
 
-    TestRail.prototype.publishResults = function (results) {
-        var _this = this;
         return axios({
-            method: 'get',
-            url: this.base + "/get_runs/" + this.options.projectId,
+            method: 'post',
+            url: _this.base + "/add_results_for_cases/" + _this.options.runId,
             headers: { 'Content-Type': 'application/json' },
             auth: {
-                username: this.options.username,
-                password: this.options.password,
-            }
-        })
-            .then(function (response) {
-                _this.runId = response.data[0].id;
-                return axios({
-                    method: 'post',
-                    url: _this.base + "/add_results_for_cases/" + _this.runId,
-                    headers: { 'Content-Type': 'application/json' },
-                    auth: {
-                        username: _this.options.username,
-                        password: _this.options.password,
-                    },
-                    data: JSON.stringify({ results: results }),
-                }).then(function (response) {
-                    return response;
-                }).catch(function (error) { return console.error(error); });
-            });
+                username: _this.options.username,
+                password: _this.options.password,
+            },
+            data: JSON.stringify({ results: results }),
+        }).then(function (response) {
+            return response;
+        }).catch(function (error) { return console.error(error); });
     };
     return TestRail;
 }());
