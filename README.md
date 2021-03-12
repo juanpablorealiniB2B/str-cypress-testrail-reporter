@@ -10,7 +10,7 @@ Cloned from the original package [salty-cypress-testrail-reporter](https://githu
 
 The original package by Spencer is awesome!
 
-`This plugin fixes the issue regarding the last spec not being reported to TestRail (Many people found a not so elegant workaround by adding an empty spec at the end of the suite). In order to accomplish this some code was changed and a dependency was added to the [deasync](https://www.npmjs.com/package/deasync) npm package`
+This plugin fixes the issue regarding the last spec not being reported to TestRail (Many people found a not so elegant workaround by adding an empty spec at the end of the suite). In order to accomplish this some code was changed and a dependency was added to the [deasync](https://www.npmjs.com/package/deasync) npm package
 
 ## Install
 
