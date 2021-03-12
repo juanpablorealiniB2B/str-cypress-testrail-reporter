@@ -1,4 +1,4 @@
-# Single TestRun TestRail Reporter for Cypress
+# Single TestRun (STR) TestRail Reporter for Cypress
 
 [![version](https://img.shields.io/npm/v/cypress-testrail-reporter.svg)](https://www.npmjs.com/package/cypress-testrail-reporter)
 [![downloads](https://img.shields.io/npm/dt/cypress-testrail-reporter.svg)](https://www.npmjs.com/package/cypress-testrail-reporter)
@@ -9,6 +9,8 @@ Publishes [Cypress](https://www.cypress.io/) runs on TestRail.
 Cloned from the original package [salty-cypress-testrail-reporter](https://github.com/skekauoha/salty-cypress-testrail-reporter) by [Spencer Skekauoha](https://github.com/skekauoha)
 
 The original package by Spencer is awesome!
+
+`This plugin fixes the issue regarding the last spec not being reported to TestRail (Many people found a not so elegant workaround by adding an empty spec at the end of the suite). In order to accomplish this some code was changed and a dependency was added to the [deasync](https://www.npmjs.com/package/deasync) npm package`
 
 ## Install
 
@@ -58,11 +60,11 @@ it("Can authenticate a valid userC123", ...
 
 **runId**: _number_ test run with which the tests are associated.
 
-## Usage from Cypress
+## Passing the reporter options as params 
 
-You need to pass the reporter options from the "cypress run" command line options, like:
+You can pass the reporter options from the "cypress run" command line options, like this:
 
-**npx cypress run --reporter-options domain="domain",username="username",password="password or api key",projectId=0,runId=0**
+**npx cypress run --reporter str-cypress-testrail-reporter --reporter-options domain="domain",username="username",password="password or api key",projectId=0,runId=0**
 
 # Functionality Update 03/01/2021 - Juan P. Realini
 
